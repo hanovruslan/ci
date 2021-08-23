@@ -1,0 +1,3 @@
+include:
+    - '/resources/gitlab/stages.yml'
+    - '/resources/gitlab/pipeline.yml'

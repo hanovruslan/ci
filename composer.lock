@@ -1,0 +1,636 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e64db10cdd5c42842236eb2dfe559e78",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "brainmaestro/composer-git-hooks",
+            "version": "v2.8.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BrainMaestro/composer-git-hooks.git",
+                "reference": "ffed8803690ac12214082120eee3441b00aa390e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/brainmaestro/composer-git-hooks/brainmaestro-composer-git-hooks-ffed8803690ac12214082120eee3441b00aa390e-zip-08cc78.zip",
+                "reference": "ffed8803690ac12214082120eee3441b00aa390e",
+                "shasum": "dfc0df2f7739253d94129f69734c1ee01aaa395d"
+            },
+            "require": {
+                "php": "^5.6 || >=7.0",
+                "symfony/console": "^3.2 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^2.9",
+                "phpunit/phpunit": "^5.7 || ^7.0"
+            },
+            "bin": [
+                "cghooks"
+            ],
+            "type": "library",
+            "extra": {
+                "hooks": {
+                    "pre-commit": "composer check-style",
+                    "pre-push": [
+                        "composer test",
+                        "appver=$(grep -o -E '\\d.\\d.\\d' cghooks)",
+                        "tag=$(git describe --tags --abbrev=0)",
+                        "if [ \"$tag\" != \"v$appver\" ]; then",
+                        "echo \"The most recent tag $tag does not match the application version $appver\\n\"",
+                        "tag=${tag#v}",
+                        "sed -i -E \"s/$appver/$tag/\" cghooks",
+                        "exit 1",
+                        "fi"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BrainMaestro\\GitHooks\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ezinwa Okpoechi",
+                    "email": "brainmaestro@outlook.com"
+                }
+            ],
+            "description": "Easily manage git hooks in your composer config",
+            "keywords": [
+                "HOOK",
+                "composer",
+                "git"
+            ],
+            "time": "2021-02-08T15:59:11+00:00"
+        },
+        {
+            "name": "internal/json-cs-fix",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.urir.ifmo.ru:internal/json-cs-fix.git",
+                "reference": "08be8209ee81a319fa75ce5ff6e7871d48d638b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/internal/json-cs-fix/internal-json-cs-fix-1.0.5-183329.zip",
+                "reference": "08be8209ee81a319fa75ce5ff6e7871d48d638b3",
+                "shasum": "d016e8e7e68a59d0b5b00c8ffafcdc1f93cbc483"
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "replace": {
+                "internal/jq-bin": "*"
+            },
+            "require-dev": {
+                "brainmaestro/composer-git-hooks": "^2.8",
+                "neronmoon/scriptsdev": "0.1.3"
+            },
+            "bin": [
+                "bin-dist/jq",
+                "bin-dist/json-cs-fix.sh"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "hooks": {
+                    "pre-commit": "composer run git:pre-commit"
+                },
+                "scripts-dev": {
+                    "git:add": "git add .",
+                    "git:pre-commit": [
+                        "@json:fix",
+                        "@git:add"
+                    ],
+                    "git:update-hooks": {
+                        "add": "cghooks add -f --lock-dir=${PWD}/var/cghooks",
+                        "update": "cghooks update --lock-dir=${PWD}/var/cghooks"
+                    },
+                    "post-install-cmd": "@git:update-hooks"
+                }
+            },
+            "scripts": {
+                "json:fix": [
+                    "bin-dist/json-cs-fix.sh"
+                ],
+                "post-install-cmd": [
+                    "@post:install:cmd"
+                ],
+                "post-update-cmd": [
+                    "@post:install:cmd"
+                ],
+                "post:install:cmd": {
+                    "empty": "echo empty post:install:cmd"
+                },
+                "validate:composer": {
+                    "lock": "@composer u --no-progress --no-autoloader --no-scripts --no-suggest --ignore-platform-reqs --root-reqs --no-plugins nothing --lock",
+                    "platform": "@composer check-platform-reqs",
+                    "strict": "@composer validate --strict --no-check-all"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "email": "web-developers@itmo.ru",
+                    "name": "web developers of IFMO"
+                }
+            ],
+            "description": "internal json-cs-fix",
+            "time": "2021-02-12T13:30:07+00:00"
+        },
+        {
+            "name": "jawira/plantuml",
+            "version": "v1.56.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jawira/plantuml.git",
+                "reference": "80010e05c345160e8c736f2b5f948b174645d886"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/jawira/plantuml/jawira-plantuml-80010e05c345160e8c736f2b5f948b174645d886-zip-67dbbd.zip",
+                "reference": "80010e05c345160e8c736f2b5f948b174645d886",
+                "shasum": "44e40c3a9f35f4bcbe0ddeefa1949a50a1eaf4ba"
+            },
+            "suggest": {
+                "pds/skeleton": "Standard PHP package skeleton",
+                "phing/phing": "PHP Build Tool"
+            },
+            "bin": [
+                "bin/plantuml"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jawira Portugal"
+                }
+            ],
+            "description": "Provides PlantUML integration: plantuml executable and plantuml.jar",
+            "keywords": [
+                "diagram",
+                "plantuml",
+                "plantuml.jar",
+                "uml"
+            ],
+            "time": "2021-05-14T13:05:55+00:00"
+        },
+        {
+            "name": "neronmoon/scriptsdev",
+            "version": "v0.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neronmoon/scriptsdev.git",
+                "reference": "e812b334bc662cccc4a965c245812b59ae2157cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/neronmoon/scriptsdev/neronmoon-scriptsdev-e812b334bc662cccc4a965c245812b59ae2157cb-zip-c62e15.zip",
+                "reference": "e812b334bc662cccc4a965c245812b59ae2157cb",
+                "shasum": "0c28341b33f71d53942ca0f1422cd3508ba8d580"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0@dev || ~2.0@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ScriptsDev\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ScriptsDev\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Krasnoperov",
+                    "email": "alistar.neron@gmail.com"
+                }
+            ],
+            "description": "Scripts-dev behaviour for Composer",
+            "homepage": "https://github.com/neronmoon/scriptsdev",
+            "keywords": [
+                "commands",
+                "commands execution",
+                "composer",
+                "dev",
+                "scripts"
+            ],
+            "time": "2020-12-16T08:02:02+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/psr/container/psr-container-b7ce3b176482dbbc1245ebf52b181af44c2cf55f-zip-34fef8.zip",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": "684c8770c89aa19cfa98bd447042c27b974f2e73"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v4.4.24",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "1b15ca1b1bedda86f98064da9ff5d800560d4c6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/symfony/console/symfony-console-1b15ca1b1bedda86f98064da9ff5d800560d4c6d-zip-405e85.zip",
+                "reference": "1b15ca1b1bedda86f98064da9ff5d800560d4c6d",
+                "shasum": "9af6daac6e11d509ed3f556ac0e36b0a78bc215d"
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php73": "^1.8",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/service-contracts": "^1.1|^2"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4",
+                "symfony/event-dispatcher": "<4.3|>=5",
+                "symfony/lock": "<4.4",
+                "symfony/process": "<3.3"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/event-dispatcher": "^4.3",
+                "symfony/lock": "^4.4|^5.0",
+                "symfony/process": "^3.4|^4.0|^5.0",
+                "symfony/var-dumper": "^4.3|^5.0"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/lock": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Eases the creation of beautiful and testable command line interfaces",
+            "homepage": "https://symfony.com",
+            "time": "2021-05-13T06:28:07+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/symfony/polyfill-mbstring/symfony-polyfill-mbstring-5232de97ee3b75b0360528dae24e73db49566ab1-zip-b4a74c.zip",
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
+                "shasum": "db61e29a4fc0cdb6b6e5ef1b1dba9375f58d7055"
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.22-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2021-01-22T09:19:47+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php73",
+            "version": "v1.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php73.git",
+                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/symfony/polyfill-php73/symfony-polyfill-php73-a678b42e92f86eca04b7fa4c0f6f19d097fb69e2-zip-164611.zip",
+                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2",
+                "shasum": "07c6b360500a67d55ce59154c49dbe5b93f00c71"
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.22-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2021-01-07T16:49:33+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/symfony/polyfill-php80/symfony-polyfill-php80-dc3063ba22c2a1fd2f45ed856374d79114998f91-zip-1b088a.zip",
+                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91",
+                "shasum": "e4ff4bf78451b2b1dd9fdb8ddec23e64e37d9e70"
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.22-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2021-01-07T16:49:33+00:00"
+        },
+        {
+            "name": "symfony/service-contracts",
+            "version": "v1.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/service-contracts.git",
+                "reference": "b776d18b303a39f56c63747bcb977ad4b27aca26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.itmo.dev/dist/symfony/service-contracts/symfony-service-contracts-b776d18b303a39f56c63747bcb977ad4b27aca26-zip-7c5e48.zip",
+                "reference": "b776d18b303a39f56c63747bcb977ad4b27aca26",
+                "shasum": "9221e8373951d0c0135116ae23bbdac99e8b215d"
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "psr/container": "^1.0"
+            },
+            "suggest": {
+                "symfony/service-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Service\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to writing services",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2020-07-06T13:19:58+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.1"
+    },
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.1.3"
+    }
+}

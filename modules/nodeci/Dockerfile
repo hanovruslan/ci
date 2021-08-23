@@ -1,0 +1,3 @@
+ARG _CI_NODE_VERSION
+
+FROM node_node:${_CI_NODE_VERSION}

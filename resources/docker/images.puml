@@ -1,0 +1,25 @@
+@startuml
+
+package "gitlab" {
+  [dockerdind] -> [gitlabrunner]
+  [gitlabrunner] <- (gitlabrunnerfiles)
+}
+
+package "Docker CI" {
+  (pharbox) --> [phpcli]
+  (composer) --> [phpcli]
+  (instantclient) --> [phpcli]
+  [phpcli] <- (userfiles)
+  [instantclient]--> [phpfpm]
+  (userfiles) -> [phpfpm]
+  [phpfpm] --> [phpfpmci]
+  [phpcli] --> [phpclici]
+  (userfiles) --> [node]
+}
+
+note top of gitlabrunnerfiles : только для файлов
+note top of composer : только для файлов
+note top of pharbox : только для файлов
+note top of instantclient : только для файлов
+
+@enduml

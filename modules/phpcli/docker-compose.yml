@@ -1,0 +1,27 @@
+version: "3.6"
+services:
+    phpcli:
+        build:
+            context: "./"
+            args:
+                _CI_IMAGE_ARTIFACT_DIR: "${_CI_IMAGE_ARTIFACT_DIR}"
+                _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
+                _CI_IMAGE_LOCAL_BIN_DIR: "${_CI_IMAGE_LOCAL_BIN_DIR}"
+                _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
+                _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
+                _CI_PHP_VERSION: "${_CI_PHP_VERSION}"
+                BASE_PHP_VERSION: "${BASE_PHP_VERSION}"
+                COMPOSER_VERSION: "${COMPOSER_VERSION}"
+                DEPLOYER_VERSION: "${DEPLOYER_VERSION}"
+                _CI_USERFILES_VERSION: "${_CI_USERFILES_VERSION}"
+                DOCKER_REGISTRY_PATH: "${DOCKER_REGISTRY_PATH}"
+                GITLAB_HOST: "${GITLAB_HOST}"
+                GITLAB_PORT: "${GITLAB_PORT}"
+                HUMBUGBOX_VERSION: "${HUMBUGBOX_VERSION}"
+                INSTANTCLIENT_VERSION: "${INSTANTCLIENT_VERSION}"
+                INSTANTCLIENT_PATH: "${INSTANTCLIENT_PATH}"
+                PHPCLI_PACKAGE_APT: "${PHPCLI_PACKAGE_APT}"
+                PHPCLI_PACKAGE_PHP_ENABLE: "${PHPCLI_PACKAGE_PHP_ENABLE}"
+                PHPCLI_PACKAGE_PHP_INSTALL: "${PHPCLI_PACKAGE_PHP_INSTALL}"
+        env_file:
+            - ".env"

@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+    phpfpm:
+        build:
+            context: "./"
+            args:
+                _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
+                _CI_IMAGE_LOCAL_BIN_DIR: "${_CI_IMAGE_LOCAL_BIN_DIR}"
+                _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
+                _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
+                _CI_PHP_VERSION: "${_CI_PHP_VERSION}"
+                BASE_PHP_VERSION: "${BASE_PHP_VERSION}"
+                _CI_USERFILES_VERSION: "${_CI_USERFILES_VERSION}"
+                DOCKER_REGISTRY_PATH: "${DOCKER_REGISTRY_PATH}"
+                GITLAB_HOST: "${GITLAB_HOST}"
+                GITLAB_PORT: "${GITLAB_PORT}"
+                INSTANTCLIENT_VERSION: "${INSTANTCLIENT_VERSION}"
+                INSTANTCLIENT_PATH: "${INSTANTCLIENT_PATH}"
+                PHPFPM_PACKAGE_APT: "${PHPFPM_PACKAGE_APT}"
+                PHPFPM_PACKAGE_PHP_ENABLE: "${PHPFPM_PACKAGE_PHP_ENABLE}"
+                PHPFPM_PACKAGE_PHP_INSTALL: "${PHPFPM_PACKAGE_PHP_INSTALL}"
+        env_file:
+            - ".env"

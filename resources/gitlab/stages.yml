@@ -1,0 +1,5 @@
+stages:
+    - env
+    - lint
+    - build
+    - upload

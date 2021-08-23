@@ -1,0 +1,26 @@
+.docker-tags: &docker-tags
+    tags:
+        - docker
+        - ycloud
+env:
+    <<: *docker-tags
+    extends: .env
+    stage: env
+lint:
+    <<: *docker-tags
+    extends: .lint
+    stage: lint
+    script:
+        - "resources/bash/lint-job.sh"
+build:
+    <<: *docker-tags
+    extends: .build
+    stage: build
+    script:
+        - "resources/bash/build-job.sh"
+upload:
+    <<: *docker-tags
+    extends: .upload
+    stage: upload
+    script:
+        - "resources/bash/upload-job.sh"

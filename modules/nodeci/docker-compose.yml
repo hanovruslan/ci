@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+    nodeci:
+        build:
+            context: "./"
+            args:
+                _CI_RUNTIME_GID: "${_CI_RUNTIME_GID}"
+                _CI_RUNTIME_HOME: "${_CI_RUNTIME_HOME}"
+                _CI_RUNTIME_UID: "${_CI_RUNTIME_UID}"
+                _CI_RUNTIME_USER: "${_CI_RUNTIME_USER}"
+                _CI_NODE_VERSION: "${_CI_NODE_VERSION}"
+        env_file:
+            - ".env"

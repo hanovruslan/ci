@@ -1,0 +1,91 @@
+{
+    "authors": [
+        {
+            "email": "web-developers@itmo.ru",
+            "name": "web developers of ITMO"
+        }
+    ],
+    "config": {
+        "apcu-autoloader": true,
+        "cache-files-ttl": 7776000,
+        "discard-changes": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "7.1.3"
+        },
+        "preferred-install": "dist"
+    },
+    "description": "docker ci",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        },
+        "hooks": {
+            "pre-commit": "composer run git:pre-commit"
+        },
+        "scripts-dev": {
+            "_dev:test:composer:lock": "@_composer:update:min nothing --lock",
+            "_dev:test:composer:strict": "@_composer:strict",
+            "_json:fix": "json-cs-fix.sh",
+            "_test:platform": "composer check-platform-reqs --no-interaction --no-plugins",
+            "git:add": "git add .",
+            "git:pre-commit": [
+                "@json:fix",
+                "@test:composer",
+                "@_test:platform",
+                "@git:add"
+            ],
+            "git:update-hooks": {
+                "add": "cghooks add -f --lock-dir=${PWD}/var/cghooks",
+                "update": "cghooks update --lock-dir=${PWD}/var/cghooks"
+            },
+            "json:fix": [
+                "@_json:fix",
+                "@_json:fix composer.lock"
+            ],
+            "plantuml:dump": "plantuml -- -tpng resources/**/*.puml",
+            "post-create-project-cmd": [
+                "@test:composer",
+                "@_test:platform"
+            ],
+            "post-install-cmd": "@git:update-hooks",
+            "post-update-cmd": "@post-install-cmd",
+            "test:composer": [
+                "@_dev:test:composer:lock",
+                "@_dev:test:composer:strict"
+            ]
+        }
+    },
+    "license": [
+        "proprietary"
+    ],
+    "name": "docker/ci",
+    "repositories": {
+        "packagist": false,
+        "satis": {
+            "type": "composer",
+            "url": "https://satis.itmo.dev"
+        }
+    },
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "internal/json-cs-fix": "^1.0",
+        "jawira/plantuml": "^1.0",
+        "neronmoon/scriptsdev": "0.1.9"
+    },
+    "scripts": {
+        "_composer:install": "composer install --no-interaction --no-suggest",
+        "_composer:strict": "composer validate --no-interaction --no-plugins --strict --no-check-all --no-check-publish",
+        "_composer:update": "composer update --no-interaction --no-plugins --no-suggest --no-scripts",
+        "_composer:update:min": "@_composer:update --no-autoloader --ignore-platform-reqs --no-progress",
+        "_test:composer:lock": "@_composer:update:min nothing --lock --no-dev",
+        "_test:composer:strict": "@_composer:strict",
+        "post-create-project-cmd": [
+            "@_composer:install"
+        ]
+    },
+    "type": "project"
+}
