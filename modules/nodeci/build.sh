@@ -7,10 +7,8 @@ _CI_RUNTIME_GID="$(id -g)"
 _CI_RUNTIME_HOME="${HOME}"
 _CI_RUNTIME_UID="$(id -u)"
 _CI_RUNTIME_USER="${USER}"
-_CI_JOB_VERSION_PATCH=latest
+_CI_JOB_VERSION_PATCH="latest"
 
 . "${PWD}/.dynamic.env" \
 && export $(awk '{sub(/=.*/, ""); print}' < "${PWD}/.dynamic.env" | tr '\n' ' ') \
-&& cp ${LOCAL_CI_SSH_KEY_PATH:-${HOME}/.ssh/id_rsa} ./id_rsa \
-&& cp ${LOCAL_CI_SSH_KEY_PATH:-${HOME}/.ssh/id_rsa}.pub ./id_rsa.pub \
 && docker-compose build --no-cache

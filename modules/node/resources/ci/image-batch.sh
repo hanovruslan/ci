@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2155
 
-apt update \
-&& apt install -y gettext-base moreutils \
-&& export uid=$(id -u node) \
-&& export gid=$(id -g node) \
-&& usermod -u 2001 node \
-&& groupmod -g 2001 node \
-&& { find / -group "${uid}" -exec chgrp -h node {} \;; } 2>/dev/null 1>&2; true \
-&& { find / -user "${gid}" -exec chown -h node {} \;; } 2>/dev/null 1>&2; true
+if_file_exists () {
+    ls "${1}"
+} 2>/dev/null 1>&2
+
+cd "${_CI_IMAGE_CI_DIR}" || exit 1
+
+files=( \
+    "${_CI_IMAGE_CI_DIR}/apt/update-and-install.sh" \
+    "${_CI_IMAGE_CI_DIR}/user/fix-builtin-user-ids.sh" \
+)
+
+for file in "${files[@]}"
+do
+    if_file_exists "${file}" \
+    && bash -x "${file}"
+done

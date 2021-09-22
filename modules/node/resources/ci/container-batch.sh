@@ -10,7 +10,6 @@ files=( \
     "${_CI_IMAGE_CI_DIR}/user/add.sh" \
     "${_CI_IMAGE_CI_DIR}/user/configure-work-dir.sh" \
     "${_CI_IMAGE_CI_DIR}/user/configure-artifact.sh" \
-    "${_CI_IMAGE_CI_DIR}/user/configure-npm.sh" \
 )
 
 for file in "${files[@]}"
