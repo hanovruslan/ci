@@ -5,8 +5,8 @@ ARG GITLAB_HOST
 ARG GITLAB_PORT
 ARG INSTANTCLIENT_VERSION
 
-FROM ${GITLAB_HOST}:${GITLAB_PORT}/docker/ci/instantclient:${INSTANTCLIENT_VERSION} AS preparedInstantclient
-FROM ${GITLAB_HOST}:${GITLAB_PORT}/docker/ci/userfiles:${_CI_USERFILES_VERSION} AS preparedUserfiles
+FROM ${GITLAB_HOST}:${GITLAB_PORT}/ci/instantclient:${INSTANTCLIENT_VERSION} AS preparedInstantclient
+FROM ${GITLAB_HOST}:${GITLAB_PORT}/ci/userfiles:${_CI_USERFILES_VERSION} AS preparedUserfiles
 FROM ${DOCKER_REGISTRY_PATH}php:${BASE_PHP_VERSION}-fpm-buster
 
 ARG _CI_IMAGE_CI_DIR

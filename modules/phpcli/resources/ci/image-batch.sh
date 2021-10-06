@@ -11,8 +11,7 @@ files=( \
     "${_CI_IMAGE_CI_DIR}/php/pecl/install.sh" \
     "${_CI_IMAGE_CI_DIR}/docker/php-ext-enable.sh" \
     "${_CI_IMAGE_CI_DIR}/docker/php-ext-configure.sh" \
-    "${_CI_IMAGE_CI_DIR}/docker/php-ext-install.sh" \
-    "${_CI_IMAGE_CI_DIR}/php/source/install.sh" \
+    "${_CI_IMAGE_CI_DIR}/docker/php-ext-install.sh"
 )
 
 for file in "${files[@]}"

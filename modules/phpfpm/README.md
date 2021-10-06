@@ -1,3 +1,3 @@
-# Образ docker/ci/phpfpm #
+# Образ ci/phpfpm #
 
 Используется как базовый образ для phpfpmci

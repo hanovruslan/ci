@@ -59,7 +59,7 @@
     "license": [
         "proprietary"
     ],
-    "name": "docker/ci",
+    "name": "ci",
     "repositories": {
         "packagist": false,
         "satis": {

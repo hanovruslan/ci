@@ -23,7 +23,7 @@ docker login gitlab.urir.ifmo.ru:5050 -u <username> -p <token>
 
 ```bash
 cd ${KRONBARS_PATH} \
-&& docker run -ti --rm -v "${PWD}:/app" gitlab.urir.ifmo.ru:5050/docker/ci/psalm:latest
+&& docker run -ti --rm -v "${PWD}:/app" gitlab.urir.ifmo.ru:5050/ci/psalm:latest
 ```
 
 4. logout

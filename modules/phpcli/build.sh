@@ -13,6 +13,4 @@ _CI_JOB_VERSION_MINOR="7.4"
 
 . "${PWD}/.dynamic.env" \
 && export $(cat "${PWD}/.dynamic.env" | awk '{sub(/=.*/, ""); print}' | tr '\n' ' ') \
-&& . "${PWD}/.${_CI_PHP_VERSION}.env" \
-&& export $(cat "${PWD}/.${_CI_PHP_VERSION}.env" | awk '{sub(/=.*/, ""); print}' | tr '\n' ' ') \
 && docker-compose build --no-cache

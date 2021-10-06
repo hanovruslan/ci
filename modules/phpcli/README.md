@@ -1,3 +1,3 @@
-# Образ docker/ci/phpcli #
+# Образ ci/phpcli #
 
 Используется как базовый образ для phpclici

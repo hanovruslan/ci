@@ -8,7 +8,6 @@ cd "${_CI_IMAGE_CI_DIR}" || exit 1
 
 files=( \
     "${_CI_IMAGE_CI_DIR}/user/add.sh" \
-    "${_CI_IMAGE_CI_DIR}/user/configure-ssh.sh" \
     "${_CI_IMAGE_CI_DIR}/user/configure-work-dir.sh" \
     "${_CI_IMAGE_CI_DIR}/user/configure-artifact.sh" \
 )
