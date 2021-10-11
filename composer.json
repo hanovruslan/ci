@@ -1,8 +1,8 @@
 {
     "authors": [
         {
-            "email": "web-developers@itmo.ru",
-            "name": "web developers of ITMO"
+            "email": "hanov.ruslan@gmail.com",
+            "name": "Hanov Ruslan"
         }
     ],
     "config": {
@@ -26,7 +26,7 @@
         "scripts-dev": {
             "_dev:test:composer:lock": "@_composer:update:min nothing --lock",
             "_dev:test:composer:strict": "@_composer:strict",
-            "_json:fix": "json-cs-fix.sh",
+            "_json:fix": "echo json-cs-fix.sh",
             "_test:platform": "composer check-platform-reqs --no-interaction --no-plugins",
             "git:add": "git add .",
             "git:pre-commit": [
@@ -59,20 +59,12 @@
     "license": [
         "proprietary"
     ],
-    "name": "ci",
-    "repositories": {
-        "packagist": false,
-        "satis": {
-            "type": "composer",
-            "url": "https://satis.itmo.dev"
-        }
-    },
+    "name": "docker/ci",
     "require": {
         "php": "^7.1"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "^2.8",
-        "internal/json-cs-fix": "^1.0",
         "jawira/plantuml": "^1.0",
         "neronmoon/scriptsdev": "0.1.9"
     },

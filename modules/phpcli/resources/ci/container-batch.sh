@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 if_file_exists () {
     ls "${1}"
@@ -15,5 +15,5 @@ files=( \
 for file in "${files[@]}"
 do
     if_file_exists "${file}" \
-    && bash -x "${file}"
+    && . "${file}"
 done

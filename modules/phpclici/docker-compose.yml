@@ -11,5 +11,3 @@ services:
                 _CI_RUNTIME_UID: "${_CI_RUNTIME_UID}"
                 _CI_RUNTIME_USER: "${_CI_RUNTIME_USER}"
                 PHPCLI_PHP_VERSION: "${PHPCLI_PHP_VERSION}"
-        env_file:
-            - ".env"

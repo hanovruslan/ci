@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e64db10cdd5c42842236eb2dfe559e78",
+    "content-hash": "7db851fd87d9a086617622ca0aff2088",
     "packages": [],
     "packages-dev": [
         {
@@ -17,9 +17,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/brainmaestro/composer-git-hooks/brainmaestro-composer-git-hooks-ffed8803690ac12214082120eee3441b00aa390e-zip-08cc78.zip",
+                "url": "https://api.github.com/repos/BrainMaestro/composer-git-hooks/zipball/ffed8803690ac12214082120eee3441b00aa390e",
                 "reference": "ffed8803690ac12214082120eee3441b00aa390e",
-                "shasum": "dfc0df2f7739253d94129f69734c1ee01aaa395d"
+                "shasum": ""
             },
             "require": {
                 "php": "^5.6 || >=7.0",
@@ -74,105 +74,25 @@
                 "composer",
                 "git"
             ],
+            "support": {
+                "issues": "https://github.com/BrainMaestro/composer-git-hooks/issues",
+                "source": "https://github.com/BrainMaestro/composer-git-hooks/tree/v2.8.5"
+            },
             "time": "2021-02-08T15:59:11+00:00"
         },
         {
-            "name": "internal/json-cs-fix",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "git@gitlab.urir.ifmo.ru:internal/json-cs-fix.git",
-                "reference": "08be8209ee81a319fa75ce5ff6e7871d48d638b3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.itmo.dev/dist/internal/json-cs-fix/internal-json-cs-fix-1.0.5-183329.zip",
-                "reference": "08be8209ee81a319fa75ce5ff6e7871d48d638b3",
-                "shasum": "d016e8e7e68a59d0b5b00c8ffafcdc1f93cbc483"
-            },
-            "require": {
-                "php": "^7.0"
-            },
-            "replace": {
-                "internal/jq-bin": "*"
-            },
-            "require-dev": {
-                "brainmaestro/composer-git-hooks": "^2.8",
-                "neronmoon/scriptsdev": "0.1.3"
-            },
-            "bin": [
-                "bin-dist/jq",
-                "bin-dist/json-cs-fix.sh"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                },
-                "hooks": {
-                    "pre-commit": "composer run git:pre-commit"
-                },
-                "scripts-dev": {
-                    "git:add": "git add .",
-                    "git:pre-commit": [
-                        "@json:fix",
-                        "@git:add"
-                    ],
-                    "git:update-hooks": {
-                        "add": "cghooks add -f --lock-dir=${PWD}/var/cghooks",
-                        "update": "cghooks update --lock-dir=${PWD}/var/cghooks"
-                    },
-                    "post-install-cmd": "@git:update-hooks"
-                }
-            },
-            "scripts": {
-                "json:fix": [
-                    "bin-dist/json-cs-fix.sh"
-                ],
-                "post-install-cmd": [
-                    "@post:install:cmd"
-                ],
-                "post-update-cmd": [
-                    "@post:install:cmd"
-                ],
-                "post:install:cmd": {
-                    "empty": "echo empty post:install:cmd"
-                },
-                "validate:composer": {
-                    "lock": "@composer u --no-progress --no-autoloader --no-scripts --no-suggest --ignore-platform-reqs --root-reqs --no-plugins nothing --lock",
-                    "platform": "@composer check-platform-reqs",
-                    "strict": "@composer validate --strict --no-check-all"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "email": "web-developers@itmo.ru",
-                    "name": "web developers of IFMO"
-                }
-            ],
-            "description": "internal json-cs-fix",
-            "time": "2021-02-12T13:30:07+00:00"
-        },
-        {
             "name": "jawira/plantuml",
-            "version": "v1.56.0",
+            "version": "v1.61.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jawira/plantuml.git",
-                "reference": "80010e05c345160e8c736f2b5f948b174645d886"
+                "reference": "03d849e1fcf6cd087c6aa963e6cec91aabb1e787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/jawira/plantuml/jawira-plantuml-80010e05c345160e8c736f2b5f948b174645d886-zip-67dbbd.zip",
-                "reference": "80010e05c345160e8c736f2b5f948b174645d886",
-                "shasum": "44e40c3a9f35f4bcbe0ddeefa1949a50a1eaf4ba"
-            },
-            "suggest": {
-                "pds/skeleton": "Standard PHP package skeleton",
-                "phing/phing": "PHP Build Tool"
+                "url": "https://api.github.com/repos/jawira/plantuml/zipball/03d849e1fcf6cd087c6aa963e6cec91aabb1e787",
+                "reference": "03d849e1fcf6cd087c6aa963e6cec91aabb1e787",
+                "shasum": ""
             },
             "bin": [
                 "bin/plantuml"
@@ -190,11 +110,16 @@
             "description": "Provides PlantUML integration: plantuml executable and plantuml.jar",
             "keywords": [
                 "diagram",
+                "jar",
                 "plantuml",
                 "plantuml.jar",
                 "uml"
             ],
-            "time": "2021-05-14T13:05:55+00:00"
+            "support": {
+                "issues": "https://github.com/jawira/plantuml/issues",
+                "source": "https://github.com/jawira/plantuml/tree/v1.61.0"
+            },
+            "time": "2021-10-08T13:00:56+00:00"
         },
         {
             "name": "neronmoon/scriptsdev",
@@ -206,9 +131,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/neronmoon/scriptsdev/neronmoon-scriptsdev-e812b334bc662cccc4a965c245812b59ae2157cb-zip-c62e15.zip",
+                "url": "https://api.github.com/repos/neronmoon/scriptsdev/zipball/e812b334bc662cccc4a965c245812b59ae2157cb",
                 "reference": "e812b334bc662cccc4a965c245812b59ae2157cb",
-                "shasum": "0c28341b33f71d53942ca0f1422cd3508ba8d580"
+                "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0"
@@ -244,6 +169,10 @@
                 "dev",
                 "scripts"
             ],
+            "support": {
+                "issues": "https://github.com/neronmoon/scriptsdev/issues",
+                "source": "https://github.com/neronmoon/scriptsdev/tree/v0.1.9"
+            },
             "time": "2020-12-16T08:02:02+00:00"
         },
         {
@@ -256,9 +185,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/psr/container/psr-container-b7ce3b176482dbbc1245ebf52b181af44c2cf55f-zip-34fef8.zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
                 "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "shasum": "684c8770c89aa19cfa98bd447042c27b974f2e73"
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
@@ -293,40 +222,45 @@
                 "container-interop",
                 "psr"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.24",
+            "version": "v4.4.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1b15ca1b1bedda86f98064da9ff5d800560d4c6d"
+                "reference": "a3f7189a0665ee33b50e9e228c46f50f5acbed22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/symfony/console/symfony-console-1b15ca1b1bedda86f98064da9ff5d800560d4c6d-zip-405e85.zip",
-                "reference": "1b15ca1b1bedda86f98064da9ff5d800560d4c6d",
-                "shasum": "9af6daac6e11d509ed3f556ac0e36b0a78bc215d"
+                "url": "https://api.github.com/repos/symfony/console/zipball/a3f7189a0665ee33b50e9e228c46f50f5acbed22",
+                "reference": "a3f7189a0665ee33b50e9e228c46f50f5acbed22",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php73": "^1.8",
-                "symfony/polyfill-php80": "^1.15",
+                "symfony/polyfill-php80": "^1.16",
                 "symfony/service-contracts": "^1.1|^2"
             },
             "conflict": {
+                "psr/log": ">=3",
                 "symfony/dependency-injection": "<3.4",
                 "symfony/event-dispatcher": "<4.3|>=5",
                 "symfony/lock": "<4.4",
                 "symfony/process": "<3.3"
             },
             "provide": {
-                "psr/log-implementation": "1.0"
+                "psr/log-implementation": "1.0|2.0"
             },
             "require-dev": {
-                "psr/log": "~1.0",
+                "psr/log": "^1|^2",
                 "symfony/config": "^3.4|^4.0|^5.0",
                 "symfony/dependency-injection": "^3.4|^4.0|^5.0",
                 "symfony/event-dispatcher": "^4.3",
@@ -365,21 +299,38 @@
             ],
             "description": "Eases the creation of beautiful and testable command line interfaces",
             "homepage": "https://symfony.com",
-            "time": "2021-05-13T06:28:07+00:00"
+            "support": {
+                "source": "https://github.com/symfony/console/tree/v4.4.30"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-25T19:27:26+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.22.1",
+            "version": "v1.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
+                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/symfony/polyfill-mbstring/symfony-polyfill-mbstring-5232de97ee3b75b0360528dae24e73db49566ab1-zip-b4a74c.zip",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
-                "shasum": "db61e29a4fc0cdb6b6e5ef1b1dba9375f58d7055"
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -390,7 +341,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -428,21 +379,38 @@
                 "portable",
                 "shim"
             ],
-            "time": "2021-01-22T09:19:47+00:00"
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-27T12:26:48+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2"
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/symfony/polyfill-php73/symfony-polyfill-php73-a678b42e92f86eca04b7fa4c0f6f19d097fb69e2-zip-164611.zip",
-                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2",
-                "shasum": "07c6b360500a67d55ce59154c49dbe5b93f00c71"
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -450,7 +418,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -490,21 +458,38 @@
                 "portable",
                 "shim"
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.22.1",
+            "version": "v1.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91"
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/symfony/polyfill-php80/symfony-polyfill-php80-dc3063ba22c2a1fd2f45ed856374d79114998f91-zip-1b088a.zip",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91",
-                "shasum": "e4ff4bf78451b2b1dd9fdb8ddec23e64e37d9e70"
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -512,7 +497,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -556,7 +541,24 @@
                 "portable",
                 "shim"
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-07-28T13:41:28+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -568,9 +570,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.itmo.dev/dist/symfony/service-contracts/symfony-service-contracts-b776d18b303a39f56c63747bcb977ad4b27aca26-zip-7c5e48.zip",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/b776d18b303a39f56c63747bcb977ad4b27aca26",
                 "reference": "b776d18b303a39f56c63747bcb977ad4b27aca26",
-                "shasum": "9221e8373951d0c0135116ae23bbdac99e8b215d"
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
@@ -618,6 +620,23 @@
                 "interoperability",
                 "standards"
             ],
+            "support": {
+                "source": "https://github.com/symfony/service-contracts/tree/v1.1.9"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-06T13:19:58+00:00"
         }
     ],
@@ -632,5 +651,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.1.3"
-    }
+    },
+    "plugin-api-version": "2.1.0"
 }
