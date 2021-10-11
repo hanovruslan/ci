@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 # shellcheck disable=SC2086
 
 apt update \

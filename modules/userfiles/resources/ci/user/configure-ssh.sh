@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 mkdir -p "${_CI_RUNTIME_HOME}/.ssh" \
 && mv /id_rsa* "${_CI_RUNTIME_HOME}/.ssh/" \

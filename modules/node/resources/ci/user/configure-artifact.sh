@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 # Use this script only in the container, not in the image. Current user must be not root
 
 mkdir -p "${_CI_IMAGE_ARTIFACT_DIR}" \

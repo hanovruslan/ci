@@ -1,4 +1,7 @@
 #!/bin/bash -x
+# shellcheck disable=SC2155
+# shellcheck disable=SC1090
+#!/bin/bash -x
 
 if_file_exists () {
     ls "${1}"
@@ -14,6 +17,8 @@ files=( \
 
 for file in "${files[@]}"
 do
-    if_file_exists "${file}" \
-    && . "${file}"
+    if if_file_exists "${file}"
+    then . "${file}"
+    else true
+    fi
 done

@@ -13,6 +13,8 @@ files=( \
 
 for file in "${files[@]}"
 do
-    if_file_exists "${file}" \
-    && . "${file}"
+    if if_file_exists "${file}"
+    then . "${file}"
+    else true
+    fi
 done

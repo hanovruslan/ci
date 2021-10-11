@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 groupadd --gid "${_CI_RUNTIME_GID}" "${_CI_RUNTIME_USER}" \
 && useradd \
