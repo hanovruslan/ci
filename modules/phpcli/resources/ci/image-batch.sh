@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 if_file_exists () {
     ls "${1}"
@@ -7,7 +7,6 @@ if_file_exists () {
 cd "${_CI_IMAGE_CI_DIR}" || exit 1
 
 files=( \
-    "${_CI_IMAGE_CI_DIR}/apt/update-and-install.sh" \
     "${_CI_IMAGE_CI_DIR}/php/pecl/install.sh" \
     "${_CI_IMAGE_CI_DIR}/docker/php-ext-enable.sh" \
     "${_CI_IMAGE_CI_DIR}/docker/php-ext-configure.sh" \
@@ -17,5 +16,5 @@ files=( \
 for file in "${files[@]}"
 do
     if_file_exists "${file}" \
-    && bash -x "${file}"
+    && . "${file}"
 done

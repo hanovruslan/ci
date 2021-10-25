@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 # shellcheck disable=SC2086
 
-docker-php-ext-enable ${PHPCLI_PACKAGE_PHP_ENABLE}
+docker-php-ext-enable ${PHPCLI_PACKAGE_PECL}

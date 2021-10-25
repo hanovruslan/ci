@@ -1,4 +1,4 @@
-# Образ ci/phpclici #
+# Образ docker/ci/phpclici #
 
 ## Зачем нужен ##
 

@@ -8,8 +8,6 @@ services:
                 _CI_RUNTIME_HOME: "${_CI_RUNTIME_HOME}"
                 _CI_RUNTIME_UID: "${_CI_RUNTIME_UID}"
                 _CI_RUNTIME_USER: "${_CI_RUNTIME_USER}"
-                GITLAB_HOST: "${GITLAB_HOST}"
-                GITLAB_PORT: "${GITLAB_PORT}"
                 PHPFPM_PHP_VERSION: "${PHPFPM_PHP_VERSION}"
                 XDEBUG_CONFIG: "remote_host=${_CI_RUNTIME_XDEBUG_REMOTE_HOST} remote_port=${_CI_RUNTIME_XDEBUG_REMOTE_PORT} idekey=${_CI_RUNTIME_XDEBUG_IDEKEY}"
         env_file:

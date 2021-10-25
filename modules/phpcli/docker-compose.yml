@@ -9,10 +9,10 @@ services:
                 _CI_IMAGE_LOCAL_BIN_DIR: "${_CI_IMAGE_LOCAL_BIN_DIR}"
                 _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
                 _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
-                BASE_PHP_VERSION: "${BASE_PHP_VERSION}"
                 COMPOSER_VERSION: "${COMPOSER_VERSION}"
+                PHPCLIBASE_PHP_VERSION: "${PHPCLIBASE_PHP_VERSION}"
                 PHPCLI_PACKAGE_APT: "${PHPCLI_PACKAGE_APT}"
-                PHPCLI_PACKAGE_PHP_ENABLE: "${PHPCLI_PACKAGE_PHP_ENABLE}"
+                PHPCLI_PACKAGE_PECL: "${PHPCLI_PACKAGE_PECL}"
                 PHPCLI_PACKAGE_PHP_INSTALL: "${PHPCLI_PACKAGE_PHP_INSTALL}"
         env_file:
             - ".env"
