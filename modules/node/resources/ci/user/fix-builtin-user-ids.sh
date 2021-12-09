@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
+# shellcheck disable=SC2155
 
 export uid=$(id -u node) \
 && export gid=$(id -g node) \
