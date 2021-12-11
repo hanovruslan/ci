@@ -1,5 +1,4 @@
 #!/bin/bash -x
-# shellcheck disable=SC1090
 # shellcheck disable=SC2034
 # shellcheck disable=SC2046
 

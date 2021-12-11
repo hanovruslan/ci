@@ -6,6 +6,6 @@ services:
             args:
                 _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
                 BASE_PHP_VERSION: "${BASE_PHP_VERSION}"
-                PHPCLI_PACKAGE_APT: "${PHPCLI_PACKAGE_APT}"
+                PHPCLI_APT_PACKAGES: "${PHPCLI_APT_PACKAGES}"
         env_file:
             - ".env"

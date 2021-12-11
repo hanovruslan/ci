@@ -1,7 +1,5 @@
 #!/bin/bash -x
-# shellcheck disable=SC2155
 # shellcheck disable=SC1090
-#!/bin/bash -x
 
 if_file_exists () {
     ls "${1}"

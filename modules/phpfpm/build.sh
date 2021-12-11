@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
-# shellcheck disable=SC1090
+#!/bin/bash -x
 # shellcheck disable=SC2034
 # shellcheck disable=SC2046
+# shellcheck disable=SC2002
 
 _CI_IMAGE_CI_DIR="/ci"
 _CI_IMAGE_LOCAL_BIN_DIR="/usr/local/bin"

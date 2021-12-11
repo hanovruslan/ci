@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 # shellcheck disable=SC2034
 # shellcheck disable=SC2046
-# shellcheck disable=SC2086
 
 _CI_RUNTIME_GID="$(id -g)"
 _CI_RUNTIME_HOME="${HOME}"

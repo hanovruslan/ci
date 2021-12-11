@@ -1,5 +1,4 @@
 #!/bin/bash -x
-# shellcheck disable=SC2155
 # shellcheck disable=SC1090
 
 if_file_exists () {

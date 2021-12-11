@@ -6,6 +6,6 @@ services:
             args:
                 _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
                 BASE_PHP_VERSION: "${BASE_PHP_VERSION}"
-                PHPFPM_PACKAGE_APT: "${PHPFPM_PACKAGE_APT}"
+                PHPFPM_APT_PACKAGES: "${PHPFPM_APT_PACKAGES}"
         env_file:
             - ".env"

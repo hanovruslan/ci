@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# shellcheck disable=SC2035
 # shellcheck disable=SC2044
 # shellcheck disable=SC2086
 

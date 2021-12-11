@@ -9,8 +9,7 @@ services:
                 _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
                 _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
                 PHPFPMBASE_PHP_VERSION: "${PHPFPMBASE_PHP_VERSION}"
-                PHPFPM_PACKAGE_PHP_ENABLE: "${PHPFPM_PACKAGE_PHP_ENABLE}"
-                PHPFPM_PACKAGE_PHP_INSTALL: "${PHPFPM_PACKAGE_PHP_INSTALL}"
-                PHPFPM_PACKAGE_PECL: "${PHPFPM_PACKAGE_PECL}"
+                PHPFPM_DOCKER_EXT_PACKAGES: "${PHPFPM_DOCKER_EXT_PACKAGES}"
+                PHPFPM_PECL_PACKAGES: "${PHPFPM_PECL_PACKAGES}"
         env_file:
             - ".env"

@@ -2,7 +2,6 @@
 # shellcheck disable=SC2002
 # shellcheck disable=SC2046
 # shellcheck disable=SC2086
-# shellcheck disable=SC2140
 
 dotenv="${PWD}/.gitlab-ci.env"
 upload_dotenv="${PWD}/.gitlab-ci-build.env"
