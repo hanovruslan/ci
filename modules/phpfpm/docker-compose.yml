@@ -6,7 +6,6 @@ services:
             args:
                 _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
                 _CI_IMAGE_LOCAL_BIN_DIR: "${_CI_IMAGE_LOCAL_BIN_DIR}"
-                _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
                 _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
                 PHPFPMBASE_PHP_VERSION: "${PHPFPMBASE_PHP_VERSION}"
                 PHPFPM_DOCKER_EXT_PACKAGES: "${PHPFPM_DOCKER_EXT_PACKAGES}"
