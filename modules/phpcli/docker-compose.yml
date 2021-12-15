@@ -7,7 +7,6 @@ services:
                 _CI_IMAGE_ARTIFACT_DIR: "${_CI_IMAGE_ARTIFACT_DIR}"
                 _CI_IMAGE_CI_DIR: "${_CI_IMAGE_CI_DIR}"
                 _CI_IMAGE_LOCAL_BIN_DIR: "${_CI_IMAGE_LOCAL_BIN_DIR}"
-                _CI_IMAGE_WORK_DIR: "${_CI_IMAGE_WORK_DIR}"
                 _CI_IMAGE_APP_DIR: "${_CI_IMAGE_APP_DIR}"
                 COMPOSER_VERSION: "${COMPOSER_VERSION}"
                 PHPCLIBASE_PHP_VERSION: "${PHPCLIBASE_PHP_VERSION}"
