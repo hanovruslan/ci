@@ -4,7 +4,7 @@
 # shellcheck disable=SC2002
 
 _CI_IMAGE_CI_DIR="/ci"
-_CI_JOB_VERSION_PATCH="7.4.16"
+_CI_JOB_VERSION_PATCH="8.2.4"
 
 . "${PWD}/.dynamic.env" \
 && export $(cat "${PWD}/.dynamic.env" | awk '{sub(/=.*/, ""); print}' | tr '\n' ' ') \
