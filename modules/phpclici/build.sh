@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 # shellcheck disable=SC2046
 
-_CI_RUNTIME_COMPOSER_HOME=${HOME}/.config/composer
+_CI_RUNTIME_COMPOSER_HOME=${HOME}/.composer
 _CI_RUNTIME_COMPOSER_CACHE_DIR=${HOME}/.cache/composer
 _CI_RUNTIME_GID="$(id -g)"
 _CI_RUNTIME_HOME="${HOME}"
