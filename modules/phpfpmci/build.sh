@@ -7,9 +7,6 @@ _CI_RUNTIME_HOME="${HOME}"
 _CI_RUNTIME_UID="$(id -u)"
 _CI_RUNTIME_USER="${USER}"
 _CI_JOB_VERSION_PATCH="latest"
-_CI_RUNTIME_XDEBUG_REMOTE_HOST=${_CI_RUNTIME_XDEBUG_REMOTE_HOST:=upstream}
-_CI_RUNTIME_XDEBUG_REMOTE_PORT=${_CI_RUNTIME_XDEBUG_REMOTE_PORT:=9000}
-_CI_RUNTIME_XDEBUG_IDEKEY="${_CI_RUNTIME_XDEBUG_IDEKEY:=docker_ci_phpfpmci}"
 
 . "${PWD}/.dynamic.env" \
 && export $(awk '{sub(/=.*/, ""); print}' < "${PWD}/.dynamic.env" | tr '\n' ' ') \
